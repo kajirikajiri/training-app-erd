@@ -1,0 +1,33 @@
+@startuml
+' hide the spot
+hide circle
+
+' avoid problems with angled crows feet
+skinparam linetype ortho
+
+entity "User" as e01 {
+  *id : number
+  --
+  *name : text
+}
+
+entity "Training" as e02 {
+  *id : number
+  --
+  *name: text
+}
+
+entity "UserTrainingRelation" as e03 {
+  *user_id : number
+  *training_id : number
+}
+
+entity "DefaultTrainning" as e04 {
+  *id : number
+  --
+  *name: text
+}
+
+e01 ||..|{ e03
+e02 ||..|{ e03
+@enduml
